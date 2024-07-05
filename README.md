@@ -39,6 +39,8 @@ tutti gli utenti hanno come nome username user_x, x va da 0 a 999
 tutti gli utenti hanno come password "password"
 i tag hanno tutti nome tag_x, x va da 0 a 199
 
+**tutte le variabili d'ambiente, per comodità, sono già impostate nel file .env**
+
   # Endpoint
 
  - **POST /api/login/check** 	
