@@ -9,9 +9,13 @@ ci sono 3 container:
 per far partire questo progetto basta lanciare dalla bash questi comandi:
 
 ````bash docker-compose build````
+
 ````bash docker-compose up -d````
+
 una volta che i container sono attivi, entrare nel container di symfony e lanciare il comando per il seeding
+
 ````docker exec -it symfony_app bash````
+
 ````composer run seeder````
 
 a causa di un bug con doctrineORM per mySQL, se si vuole tornare a fare il seeding bisogna fare un truncate delle tabelle altrimenti il purge del seeder darà degli errori.
@@ -37,7 +41,7 @@ i tag hanno tutti nome tag_x, x va da 0 a 199
 
   # Endpoint
 
- - ###POST /api/login/check 	
+ - **POST /api/login/check** 	
  
 Endpoint per il login
 il body per la post è così formattato:
@@ -59,7 +63,7 @@ Questo è un token JWT che va inserito nel header Authorization
 Il token ha la durata di 1 ora
 Non c'è un meccanismo di logout poichè i JWT sono di natura stateless
 
- - POST /api/follow/{userId}
+ - **POST /api/follow/{userId}**
 
 Endpoint per seguire un altro utente
 Per questo endpoint è necessario essere autenticati
@@ -69,7 +73,7 @@ Per questo endpoint è necessario essere autenticati
 la risposta in caso di successo sarà un 200 con body vuoto, mentre in caso di errore di validazione sarà un 400
 Invia una mail al utente che viene seguito
 
- - ###POST /api/like/{urlId}
+ - **POST /api/like/{urlId}**
 
 Endpoint per fare il like su un url
 Per questo endpoint è necessario essere autenticati
@@ -79,7 +83,7 @@ Per questo endpoint è necessario essere autenticati
 la risposta in caso di successo sarà un 200 con body vuoto, mentre in caso di errore di validazione sarà un 400
 Invia una mail al proprietario del url
 
- - ###GET /api/search
+ - **GET /api/search**
 
 
 Endpoint per fare la ricerca degli url
@@ -99,7 +103,7 @@ ad esempio:
 
 restituirà la seconda pagina di risultati per gli url con tag_1 con 15 risultati per pagina
 
- - ###GET /api/timeline
+ - **GET /api/timeline**
 
 Endpoint per fare la ricerca degli url
 Non serve autenticazione
@@ -118,7 +122,7 @@ ad esempio:
 restituirà la seconda pagina di risultati per gli tutti url con 15 risultati per pagina
 
 
- - ###POST /api/url
+ - **POST /api/url**
  
 Endpoint per la creazione di un url
 Per questo endpoint è necessario essere autenticati
@@ -134,7 +138,7 @@ il body per la post è così formattato:
 la risposta in caso di successo sarà un 200 con un unico campo "url" mentre in caso di errore di validazione sarà un 400
 Invia a tutti i follower del utente una mail.
 
- - ###GET /api/users_urls
+ - **GET /api/users_urls**
  
 Endpoint per la lista degli url degli utenti seguiti.
 Per questo endpoint è necessario essere autenticati
